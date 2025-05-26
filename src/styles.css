@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: 'Bangers', sans-serif;
   letter-spacing: 2px;
+  font-size: 12px;
   margin: 0;
   padding: 0;
   background-color: var(--mario-white);
