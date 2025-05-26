@@ -1,0 +1,91 @@
+/* game.component.css */
+.games-container {
+  perspective: 1000px;
+  padding: 40px;
+  background: linear-gradient(135deg, #5B9BD5, #214FE5);
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.section-title {
+  color: #FFD700;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 0 #E52521;
+  margin-bottom: 40px;
+}
+
+.game-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.game-card {
+  background: transparent;
+  aspect-ratio: 2/3;
+  perspective: 1000px;
+}
+
+.game-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-radius: 15px;
+}
+
+.game-card:hover .game-card-inner {
+  transform: rotateY(180deg);
+}
+
+.game-card-front,
+.game-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-card-front {
+  background: linear-gradient(45deg, #E52521, #FF8C00);
+  color: white;
+}
+
+.game-card-back {
+  background: linear-gradient(45deg, #FFD700, #FFFFFF);
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.game-cover {
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.game-year {
+  background: #FFD700;
+  color: #E52521;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.game-description {
+  text-align: center;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}

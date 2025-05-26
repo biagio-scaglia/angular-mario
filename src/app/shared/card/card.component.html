@@ -1,0 +1,27 @@
+<div class="mario-container">
+  <div class="mario-header">
+    <h1 class="mario-title">Benvenuto nel portale di Super Mario</h1>
+  </div>
+  
+  <ul class="mario-character-list">
+    @for (character of characters; track character.name) {
+      <li class="mario-character-card">
+        <img [src]="character.image" [alt]="character.name" class="character-image">
+        <div class="character-info">
+          <h2>{{ character.name }}</h2>
+          <p class="character-role">{{ character.role }}</p>
+          <p class="character-description">{{ character.description }}</p>
+          <app-mario-button 
+            [cta]="'Play as ' + character.name" [routerLink]="['/personaggi', character.route]">
+          </app-mario-button>
+        </div>
+      </li>
+    } @empty {
+      <li class="no-characters-message">
+        There are no items.
+        <app-mario-button cta="Load Characters"></app-mario-button>
+      </li>
+    }
+  </ul>
+</div>
+<router-outlet></router-outlet>

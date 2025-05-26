@@ -1,0 +1,16 @@
+@if (!isCookieConsentSet()) {
+  <div class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-header">
+        <h2>🍪 Utilizzo dei Cookie</h2>
+      </div>
+      <div class="cookie-body">
+        <p>Questo sito utilizza cookie per migliorare l'esperienza utente.</p>
+      </div>
+      <div class="cookie-footer">
+        <button class="cookie-btn accept" (click)="setCookieConsent(true)">Accetta</button>
+        <button class="cookie-btn deny" (click)="setCookieConsent(false)">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+}

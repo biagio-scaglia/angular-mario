@@ -1,0 +1,39 @@
+@if (powerup) {
+  <div class="powerup-detail-container">
+    <div class="powerup-detail-header">
+      <h1>{{ powerup.name }}</h1>
+      <div class="powerup-detail-type">{{ powerup.type }}</div>
+    </div>
+    
+    <div class="powerup-detail-content">
+      <div class="powerup-detail-image-container">
+        <img [src]="powerup.image" [alt]="powerup.name" class="powerup-detail-image">
+      </div>
+      
+      <div class="powerup-detail-info">
+        <div class="powerup-detail-section">
+          <h2>Effetto</h2>
+          <p>{{ powerup.effect }}</p>
+        </div>
+        
+        <div class="powerup-detail-section">
+          <h2>Prima Apparizione</h2>
+          <p>{{ powerup.firstAppearance }}</p>
+        </div>
+        
+        <div class="powerup-detail-section">
+          <h2>Curiosità</h2>
+          <p>{{ powerup.trivia }}</p>
+        </div>
+        
+        <app-mario-button routerLink="/powerups" class="back-button"  [cta]="'Torna indietro'">
+        </app-mario-button>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="powerup-not-found">
+    <h2>Power-Up non trovato</h2>
+    <p>Il power-up che stai cercando non è presente nella nostra collezione.</p>
+  </div>
+}

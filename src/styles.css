@@ -1,0 +1,88 @@
+:root {
+  --mario-red: #E52521;
+  --mario-blue: #049CD8;
+  --mario-yellow: #FFD700;
+  --mario-green: #43B047;
+  --mario-white: #FFFFFF;
+  --mario-black: #000000;
+  --mario-dark-red: #8B0000;
+}
+
+body {
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--mario-white);
+  color: var(--mario-black);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--mario-red);
+  text-shadow: 2px 2px 0 var(--mario-yellow), -2px -2px 0 var(--mario-yellow);
+  margin: 0 auto;
+  width: fit-content;
+} */
+/* 
+header {
+  background-color: var(--mario-red);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+} */
+
+/* nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+} */
+
+.button {
+  background: linear-gradient(to bottom, var(--mario-red), var(--mario-dark-red));
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: var(--mario-white);
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 0 var(--mario-dark-red), 0 6px 8px rgba(0,0,0,0.2);
+  transition: transform 0.1s, box-shadow 0.1s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--mario-dark-red), 0 8px 12px rgba(0,0,0,0.2);
+}
+
+section {
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+footer {
+  background-color: var(--mario-red);
+  color: var(--mario-white);
+  padding: 20px;
+  text-align: center;
+}
+
+img.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}

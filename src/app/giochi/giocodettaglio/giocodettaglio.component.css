@@ -1,0 +1,187 @@
+.game-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.game-detail-header {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.game-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.game-detail-title {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  width: 100%;
+}
+
+.game-detail-title h1 {
+  color: #FFD700;
+  font-size: 3.5rem;
+  margin: 0 0 10px;
+  text-shadow: 3px 3px 0 rgba(229, 37, 33, 0.7);
+}
+
+.game-detail-meta {
+  display: flex;
+  gap: 20px;
+}
+
+.game-detail-year, .game-detail-console {
+  background-color: rgba(229, 37, 33, 0.8);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.game-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.game-detail-image-container {
+  position: relative;
+}
+
+.game-detail-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 4px solid #E52521;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.game-detail-info h2 {
+  color: #E52521;
+  font-size: 1.8rem;
+  margin: 25px 0 15px;
+  position: relative;
+}
+
+.game-detail-info h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #214FE5;
+}
+
+.game-detail-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.game-detail-long-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.game-detail-staff ul {
+  list-style: none;
+  padding: 0;
+}
+
+.game-detail-staff li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.game-detail-staff strong {
+  color: #214FE5;
+}
+
+.game-not-found {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #E52521;
+  border-radius: 15px;
+  color: white;
+}
+
+.game-not-found h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.game-not-found p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .game-detail-header {
+    height: 350px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 3rem;
+  }
+  
+  .game-detail-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-detail-header {
+    height: 300px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .game-detail-info h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-detail-header {
+    height: 250px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 2rem;
+  }
+  
+  .game-detail-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .game-detail-year, .game-detail-console {
+    display: inline-block;
+    width: fit-content;
+  }
+  
+  .game-detail-info h2 {
+    font-size: 1.4rem;
+  }
+}

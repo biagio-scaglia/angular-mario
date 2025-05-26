@@ -1,0 +1,70 @@
+
+
+<div class="nintendo-container">
+  <h1>Verifica Copertura</h1>
+  
+  @if (!showResult) {
+    <form class="nintendo-form" (submit)="saveForm($event, name.value, surname.value, address.value, city.value, zip.value, region.value, phone.value, email.value)">
+      <div class="form-group">
+        <label>Nome</label>
+        <input #name [value]="formData.name" placeholder="Inserisci nome" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Cognome</label>
+        <input #surname [value]="formData.surname" placeholder="Inserisci cognome" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Indirizzo</label>
+        <input #address [value]="formData.address" placeholder="Inserisci indirizzo" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Città</label>
+        <input #city [value]="formData.city" placeholder="Inserisci città" required>
+      </div>
+      
+      <div class="form-group">
+        <label>CAP</label>
+        <input #zip [value]="formData.zip" placeholder="Inserisci CAP" required>
+      </div>
+
+      <div class="form-group">
+        <label>Regione</label>
+        <select #region [value]="formData.region" required>
+          <option value="">Seleziona una regione</option>
+          @for (region of italianRegions; track region) {
+            <option [value]="region">{{region}}</option>
+          }
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Telefono</label>
+        <input #phone [value]="formData.phone" placeholder="Inserisci numero di telefono" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Email</label>
+        <input #email [value]="formData.email" placeholder="Inserisci email" type="email" required>
+      </div>
+
+      @if (formError) {
+        <div class="error-message">
+          {{ formError }}
+        </div>
+      }
+      
+      <button type="submit" class="nintendo-button">Verifica</button>
+    </form>
+  }
+
+  @if (showResult) {
+    <div class="nintendo-form">
+      <h2>Risultato</h2>
+      <p>{{ resultMessage }}</p>
+      <button class="nintendo-button" (click)="resetForm()">Nuova Verifica</button>
+    </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+@if (personaggio) {
+  <div class="character-detail-container">
+    <div class="character-detail-card">
+      <img [src]="personaggio.image" [alt]="personaggio.name" class="character-detail-image">
+      <div class="character-info">
+        <h1>{{ personaggio.name }}</h1>
+        <div class="character-detail-role">{{ personaggio.role }}</div>
+        <p class="character-detail-description">{{ personaggio.fullDescription }}</p>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="character-not-found">
+    <h2>Personaggio non trovato</h2>
+    <p>Il personaggio che stai cercando non esiste nella nostra raccolta.</p>
+  </div>
+}

@@ -1,0 +1,135 @@
+:root {
+    --mario-red: #E52521;
+    --mario-blue: #049CD8;
+    --mario-yellow: #FFD700;
+    --mario-dark-red: #8B0000;
+    --mario-white: #FFFFFF;
+    --mario-black: #000000;
+}
+
+.mario-nav {
+    background-color: var(--mario-red);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.nav-logo img {
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-button {
+    background: linear-gradient(to bottom, var(--mario-red), var(--mario-dark-red));
+    border-radius: 12px;
+    padding: 10px 20px;
+    color: var(--mario-white);
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 0 var(--mario-dark-red), 0 6px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--mario-dark-red), 0 8px 12px rgba(0,0,0,0.3);
+    color: var(--mario-yellow);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    padding: 8px 15px;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.user-info:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.user-avatar {
+    border-radius: 50%;
+    border: 2px solid var(--mario-yellow);
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.admin-badge {
+    background-color: var(--mario-yellow);
+    color: var(--mario-black);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: var(--mario-white);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .user-info {
+        margin: 10px auto 0;
+        justify-content: center;
+        width: 90%;
+    }
+}

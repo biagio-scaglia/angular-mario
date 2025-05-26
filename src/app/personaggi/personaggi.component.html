@@ -1,0 +1,19 @@
+<div class="mario-characters-container">
+  <h1>Personaggi di Super Mario</h1>
+  
+  <ul class="mario-character-list">
+    @for (item of items; track item.name) {
+      <li class="mario-character-card">
+        <img [src]="item.image" [alt]="item.name" class="character-image">
+        <h2>{{ item.name }}</h2>
+        <div class="character-role">{{ item.role }}</div>
+        <p class="character-description">{{ item.description }}</p>
+        <app-mario-button [routerLink]="['/personaggi', item.route]" [cta]="'Scopri'" class="character-button">
+          Scopri di più
+        </app-mario-button>
+      </li>
+    } @empty {
+      <li class="no-characters-message">There are no items.</li>
+    }
+  </ul>
+</div>

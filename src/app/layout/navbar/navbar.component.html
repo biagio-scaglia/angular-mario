@@ -1,0 +1,29 @@
+<header>
+  <nav class="mario-nav">
+    <div class="nav-logo">
+      <img src="coin.gif" alt="Super Mario" width="50px" />
+    </div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">☰</label>
+    <ul class="nav-menu">
+      @for (item of navItems; track item.name) {
+        @if (!item.adminOnly || isAdmin()) {
+          <li>
+            <a [href]="item.path" class="nav-button">{{ item.name }}</a>
+          </li>
+        }
+      }
+      @empty {
+        <li>There are no items.</li>
+      }
+      
+      <li class="user-info">
+        <img [src]="userInfo.avatar" width="30" class="user-avatar">
+        <span>{{ userInfo.name }}</span>
+        @if (isAdmin()) {
+          <span class="admin-badge">ADMIN</span>
+        }
+      </li>
+    </ul>
+  </nav>
+</header> 

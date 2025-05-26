@@ -1,0 +1,18 @@
+<div class="mario-powerups-container">
+  <h1>Power-Up di Super Mario</h1>
+  
+  <ul class="mario-powerup-list">
+    @for (powerup of powerups; track powerup.id) {
+      <li class="mario-powerup-card">
+        <img [src]="powerup.image" [alt]="powerup.name" class="powerup-image">
+        <h2>{{ powerup.name }}</h2>
+        <div class="powerup-type">{{ powerup.type }}</div>
+        <p class="powerup-short-description">{{ powerup.shortDescription }}</p>
+        <app-mario-button [routerLink]="['/powerups', powerup.id]" [cta]="'Scopri di più'" class="powerup-button">
+        </app-mario-button>
+      </li>
+    } @empty {
+      <li class="no-powerups-message">Nessun power-up disponibile</li>
+    }
+  </ul>
+</div>

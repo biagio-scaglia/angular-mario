@@ -1,0 +1,139 @@
+.powerup-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.powerup-detail-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.powerup-detail-header h1 {
+  color: #E52521;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0 rgba(255, 215, 0, 0.5);
+}
+
+.powerup-detail-type {
+  display: inline-block;
+  background-color: #214FE5;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.powerup-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.powerup-detail-image-container {
+  position: relative;
+  text-align: center;
+}
+
+.powerup-detail-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+.powerup-detail-info {
+  color: #333;
+}
+
+.powerup-detail-section {
+  margin-bottom: 30px;
+}
+
+.powerup-detail-section h2 {
+  color: #E52521;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.powerup-detail-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: #214FE5;
+}
+
+.powerup-detail-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.back-button {
+  margin-top: 20px;
+}
+
+.powerup-not-found {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #E52521;
+  border-radius: 15px;
+  color: white;
+}
+
+.powerup-not-found h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.powerup-not-found p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .powerup-detail-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .powerup-detail-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .powerup-detail-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .powerup-detail-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .powerup-detail-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .powerup-detail-header h1 {
+    font-size: 2rem;
+  }
+  
+  .powerup-detail-type {
+    font-size: 1rem;
+  }
+}

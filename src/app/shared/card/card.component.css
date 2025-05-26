@@ -1,0 +1,182 @@
+.mario-character-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0;
+  list-style: none;
+  perspective: 1000px;
+}
+
+.mario-character-card {
+  background: linear-gradient(145deg, #FFD700 0%, #FFA500 100%);
+  border: 4px solid #E52521;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.mario-character-card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #E52521, #FFD700, #E52521);
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@keyframes gradientBorder {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.mario-character-card:hover {
+  transform: translateY(-10px) rotateX(10deg);
+  box-shadow: 0 15px 30px rgba(229, 37, 33, 0.4);
+}
+
+.character-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #E52521;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.mario-character-card:hover .character-image {
+  transform: scale(1.1) rotate(5deg);
+}
+
+h2 {
+  color: #E52521;
+  margin: 15px 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 0px rgba(255, 215, 0, 0.5);
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #214FE5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.mario-character-card:hover h2::after {
+  transform: scaleX(1);
+}
+
+.character-role {
+  color: #214FE5;
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.character-description {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+.no-characters-message {
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  grid-column: 1 / -1;
+  padding: 30px;
+  background-color: #E52521;
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .mario-character-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mario-character-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .character-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mario-character-list {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .mario-character-card {
+    padding: 15px;
+  }
+
+  .mario-character-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .no-characters-message {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (hover: none) {
+  .mario-character-card:hover {
+    transform: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .mario-character-card:hover .character-image {
+    transform: none;
+  }
+
+  .mario-character-card:hover h2::after {
+    transform: scaleX(0);
+  }
+}

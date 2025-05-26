@@ -1,0 +1,96 @@
+
+
+.nintendo-container {
+  max-width: 640px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 8px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.nintendo-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #e60012;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 #333;
+}
+
+.nintendo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+input, select {
+  padding: 12px;
+  border: 3px solid #e60012;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+  background-color: #fff7e6;
+}
+
+input:focus, select:focus {
+  border-color: #ffcc00;
+  background-color: #ffffcc;
+}
+
+.nintendo-button {
+  background-color: #e60012;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s;
+  box-shadow: 0 5px 0 #96000a;
+}
+
+.nintendo-button:hover {
+  background-color: #ff3b3b;
+}
+
+.nintendo-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #96000a;
+}
+
+.error-message {
+  background-color: #ffcccb;
+  color: #b00000;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid #e60012;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .nintendo-container {
+    margin: 40px 16px;
+    padding: 24px;
+  }
+
+  .nintendo-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}

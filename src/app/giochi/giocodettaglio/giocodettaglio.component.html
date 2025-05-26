@@ -1,0 +1,46 @@
+@if (game) {
+  <div class="game-detail-container">
+    <div class="game-detail-header" [style.backgroundImage]="'url(' + game.coverImage + ')'">
+      <div class="game-detail-overlay"></div>
+      <div class="game-detail-title">
+        <h1>{{ game.title }}</h1>
+        <div class="game-detail-meta">
+          <span class="game-detail-year">{{ game.year }}</span>
+          <span class="game-detail-console">{{ game.console }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="game-detail-content">
+      <div class="game-detail-image-container">
+        <img [src]="game.image" [alt]="game.title" class="game-detail-image">
+      </div>
+      
+      <div class="game-detail-info">
+        <div class="game-detail-description">
+          <h2>Descrizione</h2>
+          <p>{{ game.description }}</p>
+        </div>
+        
+        <div class="game-detail-long-description">
+          <h2>Informazioni dettagliate</h2>
+          <p>{{ game.longDescription }}</p>
+        </div>
+        
+        <div class="game-detail-staff">
+          <h2>Staff</h2>
+          <ul>
+            <li><strong>Sviluppatore:</strong> {{ game.developer }}</li>
+            <li><strong>Direttore:</strong> {{ game.director }}</li>
+            <li><strong>Produttore:</strong> {{ game.producer }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="game-not-found">
+    <h2>Gioco non trovato</h2>
+    <p>Il gioco che stai cercando non è presente nella nostra collezione.</p>
+  </div>
+}

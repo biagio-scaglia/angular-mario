@@ -1,0 +1,191 @@
+.mario-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #5A9DFF;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+}
+
+.circle-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FF1D25;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.circle-back-button:hover {
+  transform: scale(1.1);
+  background-color: #FF3D45;
+}
+
+.mario-player {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #E71D36;
+  border: 5px solid #FFD700;
+  border-radius: 15px;
+  padding: 25px;
+  width: 350px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mario-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: inset -3px -3px 0 rgba(0,0,0,0.2);
+}
+
+.player-body {
+  background-color: #FF9F1C;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.input-section {
+  margin-bottom: 15px;
+}
+
+.mario-upload-button {
+  display: inline-block;
+  background-color: #2EC4B6;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.mario-upload-button:hover {
+  background-color: #1A9C8F;
+  transform: translateY(-2px);
+}
+
+.mario-upload-button input[type="file"] {
+  display: none;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #333;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.mario-button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.mario-button.play {
+  background-color: #2ECC71;
+  color: white;
+}
+
+.mario-button.pause {
+  background-color: #F39C12;
+  color: white;
+}
+
+.mario-button.stop {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.mario-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.volume-icon {
+  font-size: 20px;
+}
+
+.volume-slider {
+  width: 70%;
+  height: 10px;
+  appearance: none;
+  background: #FFD700;
+  border-radius: 5px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #E71D36;
+  cursor: pointer;
+}
+
+.player-footer {
+  background-color: #2EC4B6;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.status {
+  font-size: 14px;
+  color: white;
+}
+
+.status.playing {
+  color: #FFD700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}

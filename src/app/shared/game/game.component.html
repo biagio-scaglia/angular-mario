@@ -1,0 +1,21 @@
+<div class="games-container">
+  <h2 class="section-title">Super Mario 3D Collection</h2>
+  
+  <div class="game-cards-grid">
+    @for (game of games; track game.title) {
+      <div class="game-card">
+        <div class="game-card-inner">
+          <div class="game-card-front">
+            <img [src]="game.coverImage" [alt]="game.title" class="game-cover">
+            <h3>{{ game.title}}</h3>
+            <span class="game-year">{{ game.year}}</span>
+          </div>
+          <div class="game-card-back">
+            <p class="game-description">{{ game.description}}</p>
+            <app-mario-button [cta]="'Play ' + game.title" [routerLink]="['/giochi']"></app-mario-button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
