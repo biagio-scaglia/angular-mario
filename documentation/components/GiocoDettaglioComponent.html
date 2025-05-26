@@ -1,0 +1,923 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>super-mario documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">super-mario documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  GiocoDettaglioComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/giochi/giocodettaglio/giocodettaglio.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-gioco-dettaglio</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./giocodettaglio.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./giocodettaglio.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#game" >game</a>
+                            </li>
+                            <li>
+                                <a href="#games" >games</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#route" >route</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/app/giochi/giocodettaglio/giocodettaglio.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="game"></a>
+                    <span class="name">
+                        <span ><b>game</b></span>
+                        <a href="#game"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/giochi/giocodettaglio/giocodettaglio.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="games"></a>
+                    <span class="name">
+                        <span ><b>games</b></span>
+                        <a href="#games"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      id: &#x27;super-mario-bros&#x27;,
+      title: &#x27;Super Mario Bros.&#x27;,
+      year: 1985,
+      image: &#x27;smb1.jpg&#x27;,
+      coverImage: &#x27;super1.jpg&#x27;,
+      console: &#x27;NES&#x27;,
+      developer: &#x27;Nintendo R&amp;D4&#x27;,
+      director: &#x27;Shigeru Miyamoto&#x27;,
+      producer: &#x27;Shigeru Miyamoto&#x27;,
+      description: &#x27;Super Mario Bros. è un platform game a scorrimento laterale sviluppato e pubblicato da Nintendo nel 1985 per Nintendo Entertainment System. Il gioco ha stabilito molti standard per il genere platform.&#x27;,
+      longDescription: &#x27;Super Mario Bros. ha rivoluzionato l\&#x27;industria dei videogiochi dopo la crisi del 1983. Presenta Mario che deve salvare la Principessa Peach dal malvagio Bowser attraversando il Regno dei Funghi. Il gioco introduce elementi come il salto sui nemici per sconfiggerli, i power-up come il Fungo e il Fiore di Fuoco, e mondi tematici con diversi tipi di terreno e ostacoli.&#x27;
+    },
+    {
+      id: &#x27;super-mario-world&#x27;,
+      title: &#x27;Super Mario World&#x27;,
+      year: 1990,
+      image: &#x27;smbw1.jpg&#x27;,
+      coverImage: &#x27;smbw.jpg&#x27;,
+      console: &#x27;SNES&#x27;,
+      developer: &#x27;Nintendo EAD&#x27;,
+      director: &#x27;Takashi Tezuka&#x27;,
+      producer: &#x27;Shigeru Miyamoto&#x27;,
+      description: &#x27;Il primo titolo di Mario per Super Nintendo, che introduce Yoshi come cavalcatura.&#x27;,
+      longDescription: &#x27;Super Mario World espande il gameplay di Super Mario Bros. 3 con nuove abilità come la Cape Feather che permette a Mario di planare, e l\&#x27;introduzione di Yoshi, il dinosauro amico di Mario che può mangiare nemici e ottenere abilità speciali mangiando gusci di Koopa colorati. Il gioco presenta una mappa non lineare con percorsi segreti e livelli bonus.&#x27;
+    },
+    {
+  id: &#x27;super-mario-64&#x27;,
+  title: &#x27;Super Mario 64&#x27;,
+  year: 1996,
+  image: &#x27;s65.jpg&#x27;,
+  coverImage: &#x27;s64.jpg&#x27;,
+  console: &#x27;Nintendo 64&#x27;,
+  developer: &#x27;Nintendo EAD&#x27;,
+  director: &#x27;Shigeru Miyamoto&#x27;,
+  producer: &#x27;Shigeru Miyamoto&#x27;,
+  description: &#x27;Il primo platform 3D di Mario, che ha rivoluzionato il genere con libertà di esplorazione e controllo della telecamera.&#x27;,
+  longDescription: &#x27;Super Mario 64 ha aperto la strada ai giochi 3D, permettendo a Mario di muoversi in ambienti vasti e aperti, raccogliere Stelle per progredire e affrontare sfide varie. Ha introdotto un sistema di controllo innovativo e una telecamera dinamica, creando un’esperienza di platform senza precedenti per il Nintendo 64.&#x27;
+},
+{
+  id: &#x27;super-mario-galaxy&#x27;,
+  title: &#x27;Super Mario Galaxy&#x27;,
+  year: 2007,
+  image: &#x27;mario-galaxy.jpeg&#x27;,
+  coverImage: &#x27;smg.jpg&#x27;,
+  console: &#x27;Wii&#x27;,
+  developer: &#x27;Nintendo EAD Tokyo&#x27;,
+  director: &#x27;Yoshiaki Koizumi&#x27;,
+  producer: &#x27;Shigeru Miyamoto&#x27;,
+  description: &#x27;Un platform 3D che porta Mario nello spazio con pianeti sferici e meccaniche gravitazionali innovative.&#x27;,
+  longDescription: &#x27;Super Mario Galaxy sfrutta la potenza del Wii per creare livelli ispirati a piccoli pianeti con gravità variabile, dove Mario deve saltare, correre e ruotare attorno a orbite insolite per raccogliere Stelle e salvare la Principessa Peach dalle grinfie di Bowser.&#x27;
+},
+{
+  id: &#x27;super-mario-odyssey&#x27;,
+  title: &#x27;Super Mario Odyssey&#x27;,
+  year: 2017,
+  image: &#x27;mario-odyssey.jpg&#x27;,
+  coverImage: &#x27;smo.jpg&#x27;,
+  console: &#x27;Nintendo Switch&#x27;,
+  developer: &#x27;Nintendo EPD&#x27;,
+  director: &#x27;Kenta Motokura&#x27;,
+  producer: &#x27;Yoshiaki Koizumi&#x27;,
+  description: &#x27;Mario torna in un platform 3D open-world con il cappello magico Cappy, che offre nuove abilità uniche.&#x27;,
+  longDescription: &#x27;Super Mario Odyssey è una celebrazione della libertà di esplorazione in ambienti vasti e diversificati. Cappy permette a Mario di prendere il controllo di nemici e oggetti, espandendo enormemente le possibilità di gameplay. Il gioco offre un mix di sfide classiche e nuove, con una narrativa leggera e divertente.&#x27;
+},
+{
+  id: &#x27;super-mario-wonder&#x27;,
+  title: &#x27;Super Mario Bros. Wonder&#x27;,
+  year: 2023,
+  image: &#x27;smw.jpg&#x27;,
+  coverImage: &#x27;wonder.jpg&#x27;,
+  console: &#x27;Nintendo Switch&#x27;,
+  developer: &#x27;Nintendo EPD&#x27;,
+  director: &#x27;Yoshiaki Koizumi&#x27;,
+  producer: &#x27;Takashi Tezuka&#x27;,
+  description: &#x27;Il ritorno del platform 2D con nuovi power-up e meccaniche fresche, fedele allo stile classico ma innovativo.&#x27;,
+  longDescription: &#x27;Super Mario Bros. Wonder rinnova la formula del platform a scorrimento laterale con livelli ricchi di dettagli, nuovi power-up che trasformano Mario in modi sorprendenti e modalità multiplayer cooperative. Il gioco mantiene il feeling classico di Mario ma lo spinge in avanti con design di livello creativo e meccaniche dinamiche.&#x27;
+}
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/giochi/giocodettaglio/giocodettaglio.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="route"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>route</b></span>
+                        <a href="#route"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/giochi/giocodettaglio/giocodettaglio.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-gioco-dettaglio&#x27;,
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: &#x27;./giocodettaglio.component.html&#x27;,
+  styleUrls: [&#x27;./giocodettaglio.component.css&#x27;]
+})
+export class GiocoDettaglioComponent {
+  private route &#x3D; inject(ActivatedRoute);
+  
+  games &#x3D; [
+    {
+      id: &#x27;super-mario-bros&#x27;,
+      title: &#x27;Super Mario Bros.&#x27;,
+      year: 1985,
+      image: &#x27;smb1.jpg&#x27;,
+      coverImage: &#x27;super1.jpg&#x27;,
+      console: &#x27;NES&#x27;,
+      developer: &#x27;Nintendo R&amp;D4&#x27;,
+      director: &#x27;Shigeru Miyamoto&#x27;,
+      producer: &#x27;Shigeru Miyamoto&#x27;,
+      description: &#x27;Super Mario Bros. è un platform game a scorrimento laterale sviluppato e pubblicato da Nintendo nel 1985 per Nintendo Entertainment System. Il gioco ha stabilito molti standard per il genere platform.&#x27;,
+      longDescription: &#x27;Super Mario Bros. ha rivoluzionato l\&#x27;industria dei videogiochi dopo la crisi del 1983. Presenta Mario che deve salvare la Principessa Peach dal malvagio Bowser attraversando il Regno dei Funghi. Il gioco introduce elementi come il salto sui nemici per sconfiggerli, i power-up come il Fungo e il Fiore di Fuoco, e mondi tematici con diversi tipi di terreno e ostacoli.&#x27;
+    },
+    {
+      id: &#x27;super-mario-world&#x27;,
+      title: &#x27;Super Mario World&#x27;,
+      year: 1990,
+      image: &#x27;smbw1.jpg&#x27;,
+      coverImage: &#x27;smbw.jpg&#x27;,
+      console: &#x27;SNES&#x27;,
+      developer: &#x27;Nintendo EAD&#x27;,
+      director: &#x27;Takashi Tezuka&#x27;,
+      producer: &#x27;Shigeru Miyamoto&#x27;,
+      description: &#x27;Il primo titolo di Mario per Super Nintendo, che introduce Yoshi come cavalcatura.&#x27;,
+      longDescription: &#x27;Super Mario World espande il gameplay di Super Mario Bros. 3 con nuove abilità come la Cape Feather che permette a Mario di planare, e l\&#x27;introduzione di Yoshi, il dinosauro amico di Mario che può mangiare nemici e ottenere abilità speciali mangiando gusci di Koopa colorati. Il gioco presenta una mappa non lineare con percorsi segreti e livelli bonus.&#x27;
+    },
+    {
+  id: &#x27;super-mario-64&#x27;,
+  title: &#x27;Super Mario 64&#x27;,
+  year: 1996,
+  image: &#x27;s65.jpg&#x27;,
+  coverImage: &#x27;s64.jpg&#x27;,
+  console: &#x27;Nintendo 64&#x27;,
+  developer: &#x27;Nintendo EAD&#x27;,
+  director: &#x27;Shigeru Miyamoto&#x27;,
+  producer: &#x27;Shigeru Miyamoto&#x27;,
+  description: &#x27;Il primo platform 3D di Mario, che ha rivoluzionato il genere con libertà di esplorazione e controllo della telecamera.&#x27;,
+  longDescription: &#x27;Super Mario 64 ha aperto la strada ai giochi 3D, permettendo a Mario di muoversi in ambienti vasti e aperti, raccogliere Stelle per progredire e affrontare sfide varie. Ha introdotto un sistema di controllo innovativo e una telecamera dinamica, creando un’esperienza di platform senza precedenti per il Nintendo 64.&#x27;
+},
+{
+  id: &#x27;super-mario-galaxy&#x27;,
+  title: &#x27;Super Mario Galaxy&#x27;,
+  year: 2007,
+  image: &#x27;mario-galaxy.jpeg&#x27;,
+  coverImage: &#x27;smg.jpg&#x27;,
+  console: &#x27;Wii&#x27;,
+  developer: &#x27;Nintendo EAD Tokyo&#x27;,
+  director: &#x27;Yoshiaki Koizumi&#x27;,
+  producer: &#x27;Shigeru Miyamoto&#x27;,
+  description: &#x27;Un platform 3D che porta Mario nello spazio con pianeti sferici e meccaniche gravitazionali innovative.&#x27;,
+  longDescription: &#x27;Super Mario Galaxy sfrutta la potenza del Wii per creare livelli ispirati a piccoli pianeti con gravità variabile, dove Mario deve saltare, correre e ruotare attorno a orbite insolite per raccogliere Stelle e salvare la Principessa Peach dalle grinfie di Bowser.&#x27;
+},
+{
+  id: &#x27;super-mario-odyssey&#x27;,
+  title: &#x27;Super Mario Odyssey&#x27;,
+  year: 2017,
+  image: &#x27;mario-odyssey.jpg&#x27;,
+  coverImage: &#x27;smo.jpg&#x27;,
+  console: &#x27;Nintendo Switch&#x27;,
+  developer: &#x27;Nintendo EPD&#x27;,
+  director: &#x27;Kenta Motokura&#x27;,
+  producer: &#x27;Yoshiaki Koizumi&#x27;,
+  description: &#x27;Mario torna in un platform 3D open-world con il cappello magico Cappy, che offre nuove abilità uniche.&#x27;,
+  longDescription: &#x27;Super Mario Odyssey è una celebrazione della libertà di esplorazione in ambienti vasti e diversificati. Cappy permette a Mario di prendere il controllo di nemici e oggetti, espandendo enormemente le possibilità di gameplay. Il gioco offre un mix di sfide classiche e nuove, con una narrativa leggera e divertente.&#x27;
+},
+{
+  id: &#x27;super-mario-wonder&#x27;,
+  title: &#x27;Super Mario Bros. Wonder&#x27;,
+  year: 2023,
+  image: &#x27;smw.jpg&#x27;,
+  coverImage: &#x27;wonder.jpg&#x27;,
+  console: &#x27;Nintendo Switch&#x27;,
+  developer: &#x27;Nintendo EPD&#x27;,
+  director: &#x27;Yoshiaki Koizumi&#x27;,
+  producer: &#x27;Takashi Tezuka&#x27;,
+  description: &#x27;Il ritorno del platform 2D con nuovi power-up e meccaniche fresche, fedele allo stile classico ma innovativo.&#x27;,
+  longDescription: &#x27;Super Mario Bros. Wonder rinnova la formula del platform a scorrimento laterale con livelli ricchi di dettagli, nuovi power-up che trasformano Mario in modi sorprendenti e modalità multiplayer cooperative. Il gioco mantiene il feeling classico di Mario ma lo spinge in avanti con design di livello creativo e meccaniche dinamiche.&#x27;
+}
+  ];
+
+  game: any;
+
+  ngOnInit() {
+    this.route.params.subscribe(params &#x3D;&gt; {
+      const gameId &#x3D; params[&#x27;id&#x27;];
+      this.game &#x3D; this.games.find(g &#x3D;&gt; g.id &#x3D;&#x3D;&#x3D; gameId);
+    });
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">@if (game) {
+  &lt;div class&#x3D;&quot;game-detail-container&quot;&gt;
+    &lt;div class&#x3D;&quot;game-detail-header&quot; [style.backgroundImage]&#x3D;&quot;&#x27;url(&#x27; + game.coverImage + &#x27;)&#x27;&quot;&gt;
+      &lt;div class&#x3D;&quot;game-detail-overlay&quot;&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;game-detail-title&quot;&gt;
+        &lt;h1&gt;{{ game.title }}&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;game-detail-meta&quot;&gt;
+          &lt;span class&#x3D;&quot;game-detail-year&quot;&gt;{{ game.year }}&lt;/span&gt;
+          &lt;span class&#x3D;&quot;game-detail-console&quot;&gt;{{ game.console }}&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class&#x3D;&quot;game-detail-content&quot;&gt;
+      &lt;div class&#x3D;&quot;game-detail-image-container&quot;&gt;
+        &lt;img [src]&#x3D;&quot;game.image&quot; [alt]&#x3D;&quot;game.title&quot; class&#x3D;&quot;game-detail-image&quot;&gt;
+      &lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;game-detail-info&quot;&gt;
+        &lt;div class&#x3D;&quot;game-detail-description&quot;&gt;
+          &lt;h2&gt;Descrizione&lt;/h2&gt;
+          &lt;p&gt;{{ game.description }}&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;game-detail-long-description&quot;&gt;
+          &lt;h2&gt;Informazioni dettagliate&lt;/h2&gt;
+          &lt;p&gt;{{ game.longDescription }}&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;game-detail-staff&quot;&gt;
+          &lt;h2&gt;Staff&lt;/h2&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;Sviluppatore:&lt;/strong&gt; {{ game.developer }}&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Direttore:&lt;/strong&gt; {{ game.director }}&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Produttore:&lt;/strong&gt; {{ game.producer }}&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+} @else {
+  &lt;div class&#x3D;&quot;game-not-found&quot;&gt;
+    &lt;h2&gt;Gioco non trovato&lt;/h2&gt;
+    &lt;p&gt;Il gioco che stai cercando non è presente nella nostra collezione.&lt;/p&gt;
+  &lt;/div&gt;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./giocodettaglio.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.game-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.game-detail-header {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.game-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.game-detail-title {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  width: 100%;
+}
+
+.game-detail-title h1 {
+  color: #FFD700;
+  font-size: 3.5rem;
+  margin: 0 0 10px;
+  text-shadow: 3px 3px 0 rgba(229, 37, 33, 0.7);
+}
+
+.game-detail-meta {
+  display: flex;
+  gap: 20px;
+}
+
+.game-detail-year, .game-detail-console {
+  background-color: rgba(229, 37, 33, 0.8);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.game-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.game-detail-image-container {
+  position: relative;
+}
+
+.game-detail-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 4px solid #E52521;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.game-detail-info h2 {
+  color: #E52521;
+  font-size: 1.8rem;
+  margin: 25px 0 15px;
+  position: relative;
+}
+
+.game-detail-info h2::after {
+  content: &quot;&quot;;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #214FE5;
+}
+
+.game-detail-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.game-detail-long-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.game-detail-staff ul {
+  list-style: none;
+  padding: 0;
+}
+
+.game-detail-staff li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.game-detail-staff strong {
+  color: #214FE5;
+}
+
+.game-not-found {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #E52521;
+  border-radius: 15px;
+  color: white;
+}
+
+.game-not-found h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.game-not-found p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .game-detail-header {
+    height: 350px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 3rem;
+  }
+  
+  .game-detail-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-detail-header {
+    height: 300px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .game-detail-info h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-detail-header {
+    height: 250px;
+  }
+  
+  .game-detail-title h1 {
+    font-size: 2rem;
+  }
+  
+  .game-detail-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .game-detail-year, .game-detail-console {
+    display: inline-block;
+    width: fit-content;
+  }
+  
+  .game-detail-info h2 {
+    font-size: 1.4rem;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>@if (game) {  <div class="game-detail-container">    <div class="game-detail-header" [style.backgroundImage]="\'url(\' + game.coverImage + \')\'">      <div class="game-detail-overlay"></div>      <div class="game-detail-title">        <h1>{{ game.title }}</h1>        <div class="game-detail-meta">          <span class="game-detail-year">{{ game.year }}</span>          <span class="game-detail-console">{{ game.console }}</span>        </div>      </div>    </div>        <div class="game-detail-content">      <div class="game-detail-image-container">        <img [src]="game.image" [alt]="game.title" class="game-detail-image">      </div>            <div class="game-detail-info">        <div class="game-detail-description">          <h2>Descrizione</h2>          <p>{{ game.description }}</p>        </div>                <div class="game-detail-long-description">          <h2>Informazioni dettagliate</h2>          <p>{{ game.longDescription }}</p>        </div>                <div class="game-detail-staff">          <h2>Staff</h2>          <ul>            <li><strong>Sviluppatore:</strong> {{ game.developer }}</li>            <li><strong>Direttore:</strong> {{ game.director }}</li>            <li><strong>Produttore:</strong> {{ game.producer }}</li>          </ul>        </div>      </div>    </div>  </div>} @else {  <div class="game-not-found">    <h2>Gioco non trovato</h2>    <p>Il gioco che stai cercando non è presente nella nostra collezione.</p>  </div>}</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CookieBannerComponent', 'selector': 'app-cookie'},{'name': 'DemoComponent', 'selector': 'app-demo'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormDataComponent', 'selector': 'app-form'},{'name': 'GameComponent', 'selector': 'app-game'},{'name': 'GamesListComponent', 'selector': 'app-game-list'},{'name': 'GiochiComponent', 'selector': 'app-giochi'},{'name': 'GiocoDettaglioComponent', 'selector': 'app-gioco-dettaglio'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MusicComponent', 'selector': 'app-music'},{'name': 'MyButtonComponent', 'selector': 'app-mario-button'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PersonaggiComponent', 'selector': 'app-personaggi'},{'name': 'PersonaggioDettaglioComponent', 'selector': 'app-personaggio-dettaglio'},{'name': 'PowerupdettaglioComponent', 'selector': 'app-powerup-dettaglio'},{'name': 'PowerupsComponent', 'selector': 'app-powerups'},{'name': 'TuboMarioComponent', 'selector': 'app-tubo-mario'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GiocoDettaglioComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GiocoDettaglioComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

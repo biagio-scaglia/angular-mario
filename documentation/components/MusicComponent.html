@@ -1,0 +1,1054 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>super-mario documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">super-mario documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MusicComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/music/music.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-music</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterOutlet</code>
+                            <code>RouterLink</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./music.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./music.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#audioPlayer" >audioPlayer</a>
+                            </li>
+                            <li>
+                                <a href="#currentFile" >currentFile</a>
+                            </li>
+                            <li>
+                                <a href="#isPlaying" >isPlaying</a>
+                            </li>
+                            <li>
+                                <a href="#statusMessage" >statusMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#handleFileUpload" >handleFileUpload</a>
+                            </li>
+                            <li>
+                                <a href="#pauseMusic" >pauseMusic</a>
+                            </li>
+                            <li>
+                                <a href="#playMusic" >playMusic</a>
+                            </li>
+                            <li>
+                                <a href="#setVolume" >setVolume</a>
+                            </li>
+                            <li>
+                                <a href="#stopMusic" >stopMusic</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleFileUpload"></a>
+                    <span class="name">
+                        <span ><b>handleFileUpload</b></span>
+                        <a href="#handleFileUpload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleFileUpload(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/app/music/music.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pauseMusic"></a>
+                    <span class="name">
+                        <span ><b>pauseMusic</b></span>
+                        <a href="#pauseMusic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pauseMusic()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/music/music.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playMusic"></a>
+                    <span class="name">
+                        <span ><b>playMusic</b></span>
+                        <a href="#playMusic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>playMusic()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/app/music/music.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setVolume"></a>
+                    <span class="name">
+                        <span ><b>setVolume</b></span>
+                        <a href="#setVolume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setVolume(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/music/music.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopMusic"></a>
+                    <span class="name">
+                        <span ><b>stopMusic</b></span>
+                        <a href="#stopMusic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stopMusic()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/music/music.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="audioPlayer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>audioPlayer</b></span>
+                        <a href="#audioPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLAudioElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;audioPlayer&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/music/music.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentFile"></a>
+                    <span class="name">
+                        <span ><b>currentFile</b></span>
+                        <a href="#currentFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>File | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/music/music.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPlaying"></a>
+                    <span class="name">
+                        <span ><b>isPlaying</b></span>
+                        <a href="#isPlaying"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/music/music.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="statusMessage"></a>
+                    <span class="name">
+                        <span ><b>statusMessage</b></span>
+                        <a href="#statusMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Pronto a suonare!&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/music/music.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { RouterLink, RouterOutlet } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-music&#x27;,
+  imports: [RouterOutlet, RouterLink],
+  templateUrl: &#x27;./music.component.html&#x27;,
+  styleUrls: [&#x27;./music.component.css&#x27;]
+})
+export class MusicComponent {
+  @ViewChild(&#x27;audioPlayer&#x27;) audioPlayer!: ElementRef&lt;HTMLAudioElement&gt;;
+  isPlaying &#x3D; false;
+  statusMessage &#x3D; &#x27;Pronto a suonare!&#x27;;
+  currentFile: File | null &#x3D; null;
+
+  handleFileUpload(event: Event) {
+    const input &#x3D; event.target as HTMLInputElement;
+    if (input.files &amp;&amp; input.files.length &gt; 0) {
+      this.currentFile &#x3D; input.files[0];
+      document.getElementById(&#x27;fileName&#x27;)!.textContent &#x3D; this.currentFile.name;
+      
+      const audio &#x3D; this.audioPlayer.nativeElement;
+      audio.src &#x3D; URL.createObjectURL(this.currentFile);
+      this.statusMessage &#x3D; &#x27;File caricato! Premi Play&#x27;;
+    }
+  }
+
+  playMusic() {
+    if (this.currentFile) {
+      this.audioPlayer.nativeElement.play();
+      this.isPlaying &#x3D; true;
+      this.statusMessage &#x3D; &#x27;In riproduzione...&#x27;;
+    }
+  }
+
+  pauseMusic() {
+    this.audioPlayer.nativeElement.pause();
+    this.isPlaying &#x3D; false;
+    this.statusMessage &#x3D; &#x27;In pausa&#x27;;
+  }
+
+  stopMusic() {
+    const audio &#x3D; this.audioPlayer.nativeElement;
+    audio.pause();
+    audio.currentTime &#x3D; 0;
+    this.isPlaying &#x3D; false;
+    this.statusMessage &#x3D; &#x27;Fermato&#x27;;
+  }
+
+  setVolume(event: Event) {
+    const slider &#x3D; event.target as HTMLInputElement;
+    this.audioPlayer.nativeElement.volume &#x3D; parseFloat(slider.value);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mario-container&quot;&gt;
+  &lt;a routerLink&#x3D;&quot;/home&quot; class&#x3D;&quot;circle-back-button&quot;&gt;←&lt;/a&gt;
+  
+  &lt;div class&#x3D;&quot;mario-player&quot;&gt;
+    &lt;div class&#x3D;&quot;player-header&quot;&gt;
+      &lt;div class&#x3D;&quot;mario-icon&quot;&gt;&lt;/div&gt;
+      &lt;h2&gt;Super Mario Player&lt;/h2&gt;
+    &lt;/div&gt;
+    
+    &lt;div class&#x3D;&quot;player-body&quot;&gt;
+      &lt;div class&#x3D;&quot;input-section&quot;&gt;
+        &lt;label for&#x3D;&quot;fileUpload&quot; class&#x3D;&quot;mario-upload-button&quot;&gt;
+          🎵 Carica MP3
+          &lt;input type&#x3D;&quot;file&quot; id&#x3D;&quot;fileUpload&quot; accept&#x3D;&quot;.mp3&quot; (change)&#x3D;&quot;handleFileUpload($event)&quot;&gt;
+        &lt;/label&gt;
+        &lt;div class&#x3D;&quot;file-name&quot; id&#x3D;&quot;fileName&quot;&gt;Nessun file selezionato&lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;controls&quot;&gt;
+        &lt;button (click)&#x3D;&quot;playMusic()&quot; class&#x3D;&quot;mario-button play&quot;&gt;▶ Play&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;pauseMusic()&quot; class&#x3D;&quot;mario-button pause&quot;&gt;⏸ Pause&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;stopMusic()&quot; class&#x3D;&quot;mario-button stop&quot;&gt;⏹ Stop&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;volume-control&quot;&gt;
+        &lt;span class&#x3D;&quot;volume-icon&quot;&gt;🔊&lt;/span&gt;
+        &lt;input type&#x3D;&quot;range&quot; min&#x3D;&quot;0&quot; max&#x3D;&quot;1&quot; step&#x3D;&quot;0.1&quot; 
+               (input)&#x3D;&quot;setVolume($event)&quot; class&#x3D;&quot;volume-slider&quot;&gt;
+      &lt;/div&gt;
+      
+      &lt;audio #audioPlayer&gt;&lt;/audio&gt;
+    &lt;/div&gt;
+    
+    &lt;div class&#x3D;&quot;player-footer&quot;&gt;
+      &lt;div class&#x3D;&quot;status&quot; [class.playing]&#x3D;&quot;isPlaying&quot;&gt;
+        {{statusMessage}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./music.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mario-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #5A9DFF;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+}
+
+.circle-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FF1D25;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.circle-back-button:hover {
+  transform: scale(1.1);
+  background-color: #FF3D45;
+}
+
+.mario-player {
+  font-family: &#x27;Press Start 2P&#x27;, cursive;
+  background-color: #E71D36;
+  border: 5px solid #FFD700;
+  border-radius: 15px;
+  padding: 25px;
+  width: 350px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mario-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: inset -3px -3px 0 rgba(0,0,0,0.2);
+}
+
+.player-body {
+  background-color: #FF9F1C;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.input-section {
+  margin-bottom: 15px;
+}
+
+.mario-upload-button {
+  display: inline-block;
+  background-color: #2EC4B6;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.mario-upload-button:hover {
+  background-color: #1A9C8F;
+  transform: translateY(-2px);
+}
+
+.mario-upload-button input[type&#x3D;&quot;file&quot;] {
+  display: none;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #333;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.mario-button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: &#x27;Press Start 2P&#x27;, cursive;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.mario-button.play {
+  background-color: #2ECC71;
+  color: white;
+}
+
+.mario-button.pause {
+  background-color: #F39C12;
+  color: white;
+}
+
+.mario-button.stop {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.mario-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.volume-icon {
+  font-size: 20px;
+}
+
+.volume-slider {
+  width: 70%;
+  height: 10px;
+  appearance: none;
+  background: #FFD700;
+  border-radius: 5px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #E71D36;
+  cursor: pointer;
+}
+
+.player-footer {
+  background-color: #2EC4B6;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.status {
+  font-size: 14px;
+  color: white;
+}
+
+.status.playing {
+  color: #FFD700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="mario-container">  <a routerLink="/home" class="circle-back-button">←</a>    <div class="mario-player">    <div class="player-header">      <div class="mario-icon"></div>      <h2>Super Mario Player</h2>    </div>        <div class="player-body">      <div class="input-section">        <label for="fileUpload" class="mario-upload-button">          🎵 Carica MP3          <input type="file" id="fileUpload" accept=".mp3" (change)="handleFileUpload($event)">        </label>        <div class="file-name" id="fileName">Nessun file selezionato</div>      </div>            <div class="controls">        <button (click)="playMusic()" class="mario-button play">▶ Play</button>        <button (click)="pauseMusic()" class="mario-button pause">⏸ Pause</button>        <button (click)="stopMusic()" class="mario-button stop">⏹ Stop</button>      </div>            <div class="volume-control">        <span class="volume-icon">🔊</span>        <input type="range" min="0" max="1" step="0.1"                (input)="setVolume($event)" class="volume-slider">      </div>            <audio #audioPlayer></audio>    </div>        <div class="player-footer">      <div class="status" [class.playing]="isPlaying">        {{statusMessage}}      </div>    </div>  </div></div><router-outlet></router-outlet></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CookieBannerComponent', 'selector': 'app-cookie'},{'name': 'DemoComponent', 'selector': 'app-demo'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormDataComponent', 'selector': 'app-form'},{'name': 'GameComponent', 'selector': 'app-game'},{'name': 'GamesListComponent', 'selector': 'app-game-list'},{'name': 'GiochiComponent', 'selector': 'app-giochi'},{'name': 'GiocoDettaglioComponent', 'selector': 'app-gioco-dettaglio'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MusicComponent', 'selector': 'app-music'},{'name': 'MyButtonComponent', 'selector': 'app-mario-button'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PersonaggiComponent', 'selector': 'app-personaggi'},{'name': 'PersonaggioDettaglioComponent', 'selector': 'app-personaggio-dettaglio'},{'name': 'PowerupdettaglioComponent', 'selector': 'app-powerup-dettaglio'},{'name': 'PowerupsComponent', 'selector': 'app-powerups'},{'name': 'TuboMarioComponent', 'selector': 'app-tubo-mario'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MusicComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MusicComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
